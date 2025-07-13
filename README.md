@@ -33,3 +33,32 @@ This repo is for learning and testing Flask concepts, including:
    ```bash
    git clone https://github.com/venkateshwarluk2021/flask-practice.git
    cd flask-practice
+
+##(Recommended) Create a virtual environment:
+python -m venv venv
+source venv/bin/activate       # macOS/Linux
+venv\Scripts\activate          # Windows
+
+
+## Install dependencies:
+pip install Flask
+
+
+## Run the Flask app (e.g. if your main file is app.py):
+flask run
+
+or
+python app.py
+
+##Structure
+flask-practice/
+├── app.py
+├── requirements.txt
+├── templates/
+│   ├── index.html
+│   └── ...
+├── static/
+│   ├── styles.css
+│   └── ...
+└── README.md
+
