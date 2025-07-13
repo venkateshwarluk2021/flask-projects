@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Bookmarks</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<h1>Add Bookmark</h1>
+
+<form method="post">
+	<label>Title:</label><br>
+	<input type="text" name="title" required><br><br>
+	
+	<label>URL:</label><br>
+	<input type="url" name="url" required><br><br>
+	
+	<label>Notes:</label><br>
+	<textarea name="notes"></textarea><br><br>
+	
+	<label>Tags (comma-separated):</label><br>
+	<input type="text" name="tags"><br><br>
+	
+	<button type="submit">Save</button>
+</form>
+
+<a href="{{ url_for('home') }}">Back to Home</a>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='UTF-8'>
+	<title>Bookmarks</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+	<h1>Bookmarks</h1>
+	<p>Welcome to Bookmark Manager</p>
+	<h1>My Bookmarks</h1>
+	{% with messages = get_flashed_messages(with_categories=true) %}
+		{% if messages %}
+			<ul class="flashes">
+				{% for category, message in messages %}
+					<li class="{{ category }}">{{ message }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+	{% endwith %}
+	<a href="{{ url_for('add_bookmark') }}">Add New Bookmark</a>
+	<ul>
+		{% for bm in bookmarks %}
+			<li>
+				<a href="{{ bm.url }}" target="_blank">{{ bm.title }}</a>
+				- {{ bm.notes }}
+				- Tags: {{ ','.join(bm.tags) }}
+				<form action="{{ url_for('delete_bookmark',url=bm.url)}}" method="post" style="display-inline;">
+					<button type="submit" onclick="return confirm('Delete this Bookmark? ')">Delete</button>
+			</li>
+		{% else %}
+			<li>No Bookmarks Yet</li>
+		{%endfor %}
+	</ul>
+	<a href="{{ url_for('search') }}">Search Bookmarks</a>
+</body>
+</html>

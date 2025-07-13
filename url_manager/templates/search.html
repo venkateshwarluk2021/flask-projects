@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Bookmarks</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<h1>Search Bookmarks</h1>
+
+<form method="post" action="{{ url_for('search') }}">
+	<input type="text" name="keyword" placeholder="Search..." value="{{ keyword }}">
+	<button type="submit">Search</button>
+</form>
+
+{% if keyword %}
+	<h2>Results for "{{ keyword }}"</h2>
+	<ul>
+		{% for bm in results %}
+			<li>
+				<a href="{{ bm.url }}" target="_blank">{{ bm.title }}</a>
+				- {{ bm.notes }}
+				- Tags: {{",".join(bm.tags)}}
+			</li>
+		{% else %}
+			<li>No Bookmarks Found</li>
+		{% endfor %}
+	</ul>
+{% endif %}
+
+<a href="{{ url_for('home') }}">Back to Home</a>
+
+</body>
+</htl>
