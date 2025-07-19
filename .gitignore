@@ -17,6 +17,10 @@ build/
 # keys
 config.py
 
+# files
+*.JSON
+*.json
+
 # Byte-compiled files
 __pycache__/
 *.py[cod]
