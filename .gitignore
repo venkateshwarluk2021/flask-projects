@@ -20,6 +20,7 @@ config.py
 # files
 *.JSON
 *.json
+*.txt
 
 # Byte-compiled files
 __pycache__/
