@@ -7,6 +7,11 @@
 <body class="container text-center mt-5">
 	<h2>Quiz Finished</h2>
 	<p>Your Score: <strong>{{ score }}/{{ total }}</strong></p>
+	{% if final_feedback %}
+		<div class="alert alert-info mt-3">
+			<strong>Last question Feedback:</strong>{{ final_feedback }}
+		</div>
+	{% endif %}
 	<a href="{{ url_for('index') }}" class="btn btn-primary mt-3">Try Again</a>
 </body>
 </html>
