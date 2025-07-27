@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Result</title>
+</head>
+<body class="text-cente mt-5">
+	<h1>Session Complete</h1>
+	<p>Total Questions: {{ total }} </p>
+	<p> Correct: {{ correct }}</p>
+	<p>Incorrect: {{ incorrect }}</p>
+	<a href="{{ url_for('index') }}">Start Again</a>
+</body>
+</html>
