@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Flask ALarm Clock</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		body { background: #f8f9fa; }
+		.clock { font-size: 2rem; color: green; }
+		.status { margin-top: 15px; font-weight: bold; }
+	</style>
+</head>
+<body class="container text-center mt-5">
+	
+	<h2 class="mb-4">Flask Alarm Clock</h2>
+	
+	<div class="row justify-content-center">
+		<div class="col-md-4">
+			<form id="alarmForm">
+				<div class="mb-3">
+					<label for="hour" class="form-label">Hour(HH)</label>
+					<input type="text" id="hour" name="hour" class="form-control" value="07">
+				</div>
+				<div class="mb-3">
+					<label for="minute" class="form-label">Minute(MM)</label>
+					<input type="text" id="minute" name="minute" class="form-control" value="00">
+				</div>
+				<button type="submit" class="btn btn-primary">Set Alarm</button>
+				<button type="button" class="btn btn-danger" onclick="cancelAlarm()">Cancel</button>
+				<button type="button" class="btn btn-warning" onclick="stopAlarm()">Stop</button>
+			</form>
+			<div id="status" class="status text-info">No Alarm set</div>
+		</div>
+	</div>
+	
+	<div class="mt-4 clock" id="clock"></div>
+	
+	<script>
+		function updateClock() {
+			let now = new Date();
+			document.getElementById("clock").textcontent = 
+				now.toLocaleTimeString("en-GB"); //HH:MM:SS
+				}
+				
+			setInterval(updateClock, 1000);
+			updateClock();
+			
+		document.getElementById("alarmForm").addEventListener("submit", async function(e) {
+			e.preventDefault();
+			let formData = new FormData(this);
+			let res = await fetch("/set_alarm", {method: "POST", body: formData});
+			let data = await res.json();
+			document.getElementById("status").textContent = data.message;
+			});
+			
+			async function cancelAlarm() {
+				let res = await fetch("/cancel_alarm", {method: "POST"});
+				let data = await res.json();
+				document.getElementById("status").textContent = data.message;
+				}
+				
+			async function stopAlarm() {
+				let res = await fetch("/stop_alarm", {method: "POST"});
+				let data = await res.json();
+				document.getElementById("status").textContent = data.message;
+				}
+				
+			</script>
+		</body>
+		</html>	
+			
+				
+				
+	

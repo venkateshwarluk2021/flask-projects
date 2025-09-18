@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Countdown Timer</title>
+	<style>
+		body{
+			font-family: Arial,sans-serif;
+			text-align: center;
+			background: #f4f4f9;
+			margin-top: 50px;
+		}
+		.timer{
+			font-size: 48px;
+			font-weight: bold;
+			margin: 20px;
+			}
+		input{
+			padding: 8px;
+			font-size: 16px;
+			text-align: center;
+			}
+		button {
+			padding: 10px 20px;
+			font-size: 16px;
+			margin-top: 10px;
+			background: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 6px;
+			cursor: pointer;
+			}
+		button:hover{
+			background: #45a049;
+			}
+	</style>
+</head>
+<body>
+	<h1>Countdown timer</h1>
+	<form method="post">
+		<input type="number" name="seconds" placeholder="Enter seconds" required>
+		<br>
+		<button type="submit">Start</button>
+	</form>
+	
+	
+	{% if countdown_time %}
+	<div class="timer" id="timer"></div>
+	
+	<div>
+		<button id="stopBtn">Stop</button>
+		<button id="resetBtn">Reset</button>
+	</div>
+	
+	<script>
+		let timeLeft = {{ countdown_time }};
+		let originalTime = {{ countdown_time }};
+		let timerDiv = document.getElementById("timer")
+		let timer;
+		
+		function updateTimer() {
+			let mins = Math.floor(timeLeft/60);
+			let secs = timeLeft % 60;
+			timerDiv.textContent = String(mins).padStart(2, '0')+":"+String(secs).padStart(2,'0');
+			
+			if (timeLeft <= 0){
+				clearInterval(timer);
+				timerDiv.textContent = "Time's Up!!"
+			}
+			timeLeft--;
+		}
+		
+		updateTimer();
+		timer = setInterval(updateTimer, 1000);
+		
+		document.getElementById("stopBtn").addEventListener("click", function(){
+			clearInterval(timer);
+			}
+			);
+			
+		document.getElementById("resetBtn").addEventListener("click", function(){
+			clearInterval(timer);
+			timeLeft =originalTime;
+			updateTimer();
+			timer = setInterval(updateTimer, 1000);
+			});
+	</script>
+	{% endif %}
+</body>
+</html>
+		
+		
