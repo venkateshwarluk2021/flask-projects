@@ -9,11 +9,8 @@ A simple Flask application to fetch and display weather information for a given 
 1. [Features](#features)  
 2. [Technologies Used](#technologies-used)  
 3. [Installation](#installation)  
-4. [Usage](#usage)  
-5. [Configuration](#configuration)  
-6. [Folder Structure](#folder-structure)  
-7. [Contributing](#contributing)  
-8. [License](#license)
+
+
 
 ---
 
