@@ -11,10 +11,7 @@ A simple Flask web application to play the classic Rock-Paper-Scissors game via 
 - [Technologies Used](#technologies-used)  
 - [Installation](#installation)  
 - [Usage](#usage)  
-- [Configuration](#configuration)  
-- [Project Structure](#project-structure)  
-- [Contributing](#contributing)  
-- [License](#license)
+
 
 ---
 
@@ -68,5 +65,3 @@ Users can play Rock-Paper-Scissors against the computer. The user selects Rock, 
 - Select Rock, Paper, or Scissors from the UI.
 - See the computer’s choice and the result.
 
-
-6. 
