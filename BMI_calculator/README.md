@@ -10,10 +10,7 @@ A simple Flask web application that calculates the Body Mass Index (BMI) for use
 - [Technologies Used](#technologies-used)  
 - [Installation](#installation)  
 - [Usage](#usage)  
-- [Configuration](#configuration)  
-- [Project Structure](#project-structure)  
-- [Contributing](#contributing)  
-- [License](#license)
+
 
 ---
 
