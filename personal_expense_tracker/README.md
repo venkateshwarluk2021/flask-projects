@@ -11,10 +11,7 @@ A Flask-based web application to help users track their expenses. Users can add,
 - [Installation](#installation)  
 - [Configuration](#configuration)  
 - [Usage](#usage)  
-- [Project Structure](#project-structure)  
-- [Future Improvements](#future-improvements)  
-- [Contributing](#contributing)  
-- [License](#license)  
+  
 
 ---
 
