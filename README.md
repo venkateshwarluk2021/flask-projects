@@ -37,7 +37,7 @@ This repo is for learning and testing Flask concepts, including:
 ##(Recommended) Create a virtual environment:
 python -m venv venv
 source venv/bin/activate       # macOS/Linux
-venv\Scripts\activate          # Windows
+venv \Scripts\activate          # Windows
 
 
 ## Install dependencies:
