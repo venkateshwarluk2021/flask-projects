@@ -70,3 +70,17 @@ A simple Flask web application that calculates the Body Mass Index (BMI) for use
 
 View your calculated BMI and the category interpretation
 
+
+## Docker Support
+
+### Build Image
+docker build -t bmi-calculator .
+
+### Run Container
+docker run -p 5000:5000 bmi-calculator
+
+### Pull from Docker Hub
+docker pull kvenkat2026/bmi-calculator
+
+docker run -p 5000:5000 kvenkat2026/bmi-calculator
+

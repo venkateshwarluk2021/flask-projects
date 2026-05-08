@@ -1,0 +1,52 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Environment variables
+.env
+.env.*
+
+# Flask stuff
+instance/
+.webassets-cache
+
+# Logs
+*.log
+
+# Git
+.git/
+.gitignore
+
+# Docker (optional but recommended)
+Dockerfile
+.dockerignore
+
+# OS files (Windows + general)
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# VS Code / IDE
+.vscode/
+.idea/
+
+# Test / cache tools
+.pytest_cache/
+coverage/
+htmlcov/
+
+# SQLite DB (optional - only if you don’t want to include local DB)
+*.db
+*.sqlite3
+
+# Misc
+*.swp
+*.bak
+*.tmp
