@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card shadow-lg p-4 mx-auto border-0" style="max-width: 500px; border-radius: 15px;">
+	<h3 class="mb-4 text-center text-warning">Edit Book</h3>
+	
+	<form method="POST">
+		<div class="mb-3">
+			<label class="form-label fw-semibold">Title</label>
+			<input type="text" name="title" class="form-control form-control-lg" value="{{ book.title }}" required>
+		</div>
+		
+		<div class="mb-3">
+			<label class="form-label fw-semibold">Author</label>
+			<input type="text" name="author" class="fomr-control from-control-lg" value="{{ book.author }}" required>
+		</div>
+		
+		<div class="mb-3">
+			<label class="form-control fw-semibold">Year</label>
+			<input type="number" name="year" class="from-control form-control-lg" value="{{ book.year }}" required>
+		</div>
+		
+		<button class="btn btn-warning w-100 btn-lg">
+			<i class="bi bi-pencil"></i>Update Book
+		</button>
+	</form>
+</div>
+{% endblock %}
